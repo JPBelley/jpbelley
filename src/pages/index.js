@@ -64,7 +64,7 @@ const IndexPage = () => (
         <div className="columns columns-2 small-gap">
           <div className="column">
             <h2>You wanna learn<br />how to code?</h2>
-            <p style={{ maxWidth: '350px' }}>I'm working on a course so you can learn how to code your own website. The course is ongoing and far from being ready. However, you can try the beta version and feel free to contact me at <a href="mailto:belleyjeanphilippe@gmail.com">belleyjeanphilippe@gmail.com</a> to give me feedback.</p>
+            <p style={{ maxWidth: '350px' }}>I'm working on a course so you can learn how to code your own website. The full course is progressing well and should be ready soon. However, you can try the beta version today! Feel free to contact me at <a href="mailto:belleyjeanphilippe@gmail.com">belleyjeanphilippe@gmail.com</a> for any questions or feedback.</p>
             {/* <Link className="button button-outline" to="page-2">Learn now</Link> */}
             <a className="button button-outline" href="https://jpbelley.github.io/code-editor/#/editor">Learn now</a>
           </div>
@@ -90,7 +90,7 @@ const IndexPage = () => (
       <section className="section section-lg dark">
         <div className="text-center">
           <h2>About myself</h2>
-          <p style={{ margin: '0 auto' }}>Hello, I'm a front end developer who's passionate about code. Not only, I like spending my time perfecting my skills, I love teaching what I learnt and share my passion. This is the purpose of this website. So if you wanna learn and share thoughts about coding, welcome home!</p>
+          <p style={{ margin: '0 auto' }}>Hello my name is JP, I'm a front end developer who's passionate about code. Not only do I like spending my time perfecting my skills, but I also love teaching it and share my discoveries. This is why I built this website. So if you wanna learn and share thoughts about coding, welcome home!</p>
         </div>
       </section>
 

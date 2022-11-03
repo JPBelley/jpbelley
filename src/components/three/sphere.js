@@ -15,7 +15,6 @@ const ThreeSphere = () => {
             x: 0,
             y: 1
         }
-
         let width = container.offsetWidth;
         let height = container.offsetHeight;
         const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -23,11 +22,6 @@ const ThreeSphere = () => {
         camera.aspect = width / height;
         camera.updateProjectionMatrix();
         container.appendChild(renderer.domElement);
-
-        // const geometry = new THREE.SphereGeometry(15, 32, 16);
-        // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        // const cube = new THREE.Mesh(geometry, material);
-        // scene.add(cube);
 
         window.addEventListener('resize', () => resize());
 
@@ -82,7 +76,7 @@ const ThreeSphere = () => {
             time += 0.005;
             sphere.material.uniforms.hoverState.value = lerp(sphere.material.uniforms.hoverState.value, mouse.x*0.01, 0.05);
             // sphere.material.uniforms.hoverState.value = mouse.x * 0.01;
-            sphere.material.uniforms.time.value = mouse.y * 0.01;
+            sphere.material.uniforms.time.value = lerp(sphere.material.uniforms.time.value, mouse.y * 0.01, 0.05);
             sphere.rotation.x += 0.001;
             sphere.rotation.y += 0.001;
 

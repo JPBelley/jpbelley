@@ -325,4 +325,9 @@ section {
 
 .button-outline {
   border: solid 1px var(--black);
+
+  .dark & {
+    border: solid 1px var(--white);
+    color: var(--white);
+  }
 }
