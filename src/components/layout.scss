@@ -41,7 +41,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
-  font-family: sans-serif;
+  // font-family: sans-serif;
   font-family: var(--font-sans);
   font-weight: normal;
   margin: 0;
@@ -242,6 +242,16 @@ pre tt:after {
   content: none;
 }
 
+input {
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid;
+  width: 100%;
+  max-width: 350px;
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+
 /* Sections */
 section {
   margin: 0 auto;
@@ -321,6 +331,17 @@ section {
   border-radius: 4px;
   padding: 8px 12px;
   text-decoration: none;
+  font-weight: 500;
+  background-color: transparent;
+  font-size: var(--font-md);
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: .3s ease-out;
+}
+
+.button:hover {
+  background-color: var(--black);
+  color: var(--white);
 }
 
 .button-outline {

@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Hero from "../components/hero/hero"
 import Card from "../components/card/card"
 import Seo from "../components/seo"
+import MailchimpSignup from "../components/mailchimp/mailchimp"
 import * as styles from "../components/index.module.css"
 
 const links = [
@@ -64,9 +65,9 @@ const IndexPage = () => (
         <div className="columns columns-2 small-gap">
           <div className="column">
             <h2>You wanna learn<br />how to code?</h2>
-            <p style={{ maxWidth: '350px' }}>I'm working on a course so you can learn how to code your own website. The full course is progressing well and should be ready soon. However, you can try the beta version today! Feel free to contact me at <a href="mailto:belleyjeanphilippe@gmail.com">belleyjeanphilippe@gmail.com</a> for any questions or feedback.</p>
+            <p style={{ maxWidth: '350px' }}>I'm working on a course so you can learn how to code your own website. The full course is progressing well and should be ready soon. However, you can try the beta version today by <em>signing up</em> to the course! Feel free to contact me at <a href="mailto:belleyjeanphilippe@gmail.com">belleyjeanphilippe@gmail.com</a> for any questions or feedback.</p>
             {/* <Link className="button button-outline" to="page-2">Learn now</Link> */}
-            <a className="button button-outline" href="https://jpbelley.github.io/code-editor/#/editor">Learn now</a>
+            <MailchimpSignup  />
           </div>
 
           <div className="column">
