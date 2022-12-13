@@ -14,7 +14,7 @@
   --font-lg: 18px;
   --font-md: 16px;
   --font-sm: 14px;
-  --font-sx: 12px;
+  --font-xs: 12px;
   --line-height-loose: 1.75;
   --line-height-normal: 1.5;
   --line-height-dense: 1.1;
@@ -242,14 +242,28 @@ pre tt:after {
   content: none;
 }
 
+/*
+ * Form
+ */
+.input-container {
+  position: relative;
+}
+
 input {
   height: 40px;
   border-radius: 4px;
   border: 1px solid;
   width: 100%;
   max-width: 350px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
   padding: 0 8px;
+}
+
+.error {
+  position: absolute;
+  top: 40px;
+  font-size: var(--font-xs);
+  color: red;
 }
 
 /* Sections */

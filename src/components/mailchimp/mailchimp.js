@@ -5,6 +5,7 @@ const MailchimpSignup = () => {
 // export default class MailchimpSignup extends React.Component {
     const [email, setEmail] = useState('');
     const [register, setRegister] = useState(false);
+    const [error, setError] = useState(false);
     // const listFields  = '';
     // Since `addToMailchimp` returns a promise, you
     // can handle the response in two different ways:
@@ -21,12 +22,13 @@ const MailchimpSignup = () => {
                 // I recommend setting data to React state
                 // but you can do whatever you want (including ignoring this `then()` altogether)
                 if (data.result == "success") setRegister(true);
-                console.log(data.result)
+                window.location.href = 'https://app.jeanphilippebelley.com/#/editor';
             })
             .catch(() => {
                 // unnecessary because Mailchimp only ever
                 // returns a 200 status code
                 // see below for how to handle errors
+                setError(true);
             })
     }
 
@@ -44,26 +46,21 @@ const MailchimpSignup = () => {
 
     return (
         <form onSubmit={_handleSubmit} id="signup">
-            {!register ? 
-                <>
-                    <div className="mc-field-group">
-                        <input 
-                            type="email"
-                            value={email}
-                            name="EMAIL" 
-                            className="required email" 
-                            placeholder="Email address"
-                            id="mce-EMAIL" 
-                            onChange={(value) => setEmail(value.target.value)} 
-                            required 
-                        />
-                        <span id="mce-EMAIL-HELPERTEXT" className="helper_text"></span>
-                    </div>
-                    <button className="mailchimp-submit button button-outline" type="submit" form="signup" value="Submit" style={{marginTop: '10px'}}>Start to learn</button>
-                </>
-            :
-                <a className="button button-outline" href="https://jpbelley.github.io/code-editor/#/editor">Learn now</a>
-            }
+            <div className="input-container mc-field-group">
+                <input 
+                    type="email"
+                    value={email}
+                    name="EMAIL" 
+                    className="required email" 
+                    placeholder="Email address"
+                    id="mce-EMAIL" 
+                    onChange={(value) => setEmail(value.target.value)} 
+                    required 
+                />
+                <span id="mce-EMAIL-HELPERTEXT" className="helper_text"></span>
+                {error && <div className="error">There's an error with your email</div>}
+            </div>
+            <button className="mailchimp-submit button button-outline" type="submit" form="signup" value="Submit" style={{marginTop: '10px'}}>Start to learn</button>
         </form>
     )
 }
