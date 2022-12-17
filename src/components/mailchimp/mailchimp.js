@@ -22,7 +22,7 @@ const MailchimpSignup = () => {
                 // I recommend setting data to React state
                 // but you can do whatever you want (including ignoring this `then()` altogether)
                 if (data.result == "success") setRegister(true);
-                window.location.href = 'https://app.jeanphilippebelley.com/#/editor';
+                window.location.href = 'https://app.jeanphilippebelley.com/';
             })
             .catch(() => {
                 // unnecessary because Mailchimp only ever
@@ -41,7 +41,6 @@ const MailchimpSignup = () => {
         // I recommend setting `result` to React state
         // but you can do whatever you want
     // }
-    console.log(email);
 
 
     return (
