@@ -64,7 +64,7 @@ const IndexPage = () => (
       <section className="section light">
         <div className="columns columns-2 small-gap">
           <div className="column">
-            <h2>You wanna learn<br />how to code?</h2>
+            <h2>You want to learn<br />how to code?</h2>
             <p style={{ maxWidth: '350px' }}>I'm working on a course so you can learn how to code your own website. The full course is progressing well and should be ready soon. However, you can try the beta version today by <em>signing up</em> to the course! Feel free to contact me at <a href="mailto:belleyjeanphilippe@gmail.com">belleyjeanphilippe@gmail.com</a> for any questions or feedback.</p>
             {/* <Link className="button button-outline" to="page-2">Learn now</Link> */}
             <MailchimpSignup  />
