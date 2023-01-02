@@ -52,8 +52,6 @@ const moreLinks = [
   { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
 ]
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
-
 const IndexPage = () => (
   <Layout>
     {/* <Seo title="Home" /> */}
@@ -65,7 +63,8 @@ const IndexPage = () => (
         <div className="columns columns-2 small-gap">
           <div className="column">
             <h2>You want to learn<br />how to code?</h2>
-            <p style={{ maxWidth: '350px' }}>I'm working on a course so you can learn how to code your own website. The full course is progressing well and should be ready soon. However, you can try the beta version today by <em>signing up</em> to the course! Feel free to contact me at <a href="mailto:belleyjeanphilippe@gmail.com">belleyjeanphilippe@gmail.com</a> for any questions or feedback.</p>
+            <p style={{ maxWidth: '350px' }}>I'm working on a course so you can learn how to code your own website. The full course is progressing well and should be ready soon. However, you can try the beta version today by <em>signing up</em> to the course! 
+              I also created a <a href="https://discord.gg/HrQk97nW" target="_blank">Discord channel</a> for any questions or feedback related to the course.</p>
             {/* <Link className="button button-outline" to="page-2">Learn now</Link> */}
             <MailchimpSignup  />
           </div>
@@ -87,11 +86,19 @@ const IndexPage = () => (
         </div>
       </section>
 
-      {/* Blog */}
+      {/* About */}
+      <section className="section section-lg dark">
+        <div className="text-center">
+          <h2>The course</h2>
+          <p style={{ margin: '0 auto' }}></p>
+        </div>
+      </section>
+
+      {/* About */}
       <section className="section section-lg dark">
         <div className="text-center">
           <h2>About myself</h2>
-          <p style={{ margin: '0 auto' }}>Hello my name is JP, I'm a front end developer who's passionate about code. Not only do I like spending my time perfecting my skills, but I also love teaching it and share my discoveries. This is why I built this website. So if you wanna learn and share thoughts about coding, welcome home!</p>
+          <p style={{ margin: '0 auto' }}>My name is JP, I'm a front end developer who's passionate about code. Not only do I like spending my time perfecting my skills, but I also love teaching it and share my discoveries. This is why I built this website. So if you wanna learn and share thoughts about coding, welcome home!</p>
         </div>
       </section>
 
