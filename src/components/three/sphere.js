@@ -3,6 +3,7 @@ import * as THREE from "three"
 import fragment from '../../shaders/fragment.glsl'
 import vertex from '../../shaders/vertex.glsl'
 import { lerp } from "../../utils/lerp"
+import { sceneResize } from "../../utils/three-utils"
 
 const ThreeSphere = () => {
     let container = React.useRef(null);
@@ -23,18 +24,9 @@ const ThreeSphere = () => {
         camera.updateProjectionMatrix();
         container.appendChild(renderer.domElement);
 
-        window.addEventListener('resize', () => resize());
-
-        const resize = () => {
-            width = container.offsetWidth;
-            height = container.offsetHeight;
-            renderer.setSize(width, height);
-            camera.aspect = width / height;
-            camera.updateProjectionMatrix();
-        }
+        window.addEventListener('resize', () => sceneResize({ width, height, renderer, camera, container }));
 
         const sphereGeometry = new THREE.SphereGeometry(1, 40, 40);
-        // const sphereMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
         const sphereMaterial = new THREE.ShaderMaterial({
             uniforms: {
                 hoverState: {
@@ -43,8 +35,6 @@ const ThreeSphere = () => {
                 time: {
                     value: 1
                 },
-            //     time: { value: 0 },
-            //     oceanTexture: { value: new THREE.TextureLoader().load(ocean) },
             },
             side: THREE.DoubleSide,
             fragmentShader: fragment,

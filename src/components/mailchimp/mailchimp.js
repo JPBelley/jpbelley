@@ -32,17 +32,6 @@ const MailchimpSignup = () => {
             })
     }
 
-    // 2. via `async/await`
-    // const _handleSubmit = async (e) => {
-    // const _handleSubmit = async (e) => {
-        // e.preventDefault();
-        // const result = await addToMailchimp(email, listFields)
-        // console.log(result);
-        // I recommend setting `result` to React state
-        // but you can do whatever you want
-    // }
-
-
     return (
         <form onSubmit={_handleSubmit} id="signup">
             <div className="input-container mc-field-group">

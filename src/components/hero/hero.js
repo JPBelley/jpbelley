@@ -14,8 +14,11 @@ const Hero = () => {
         >
             <div className="columns columns-2">
                 <div className="column" style={{ position: 'relative', zIndex: 1 }}>
-                    <h1>Here's my<br />code hub!</h1>
-                    <p style={{ maxWidth: '350px' }}>This is a place where I teach coding, share experiments and my thoughts.</p>
+                    <h1>Welcome to<br />my code hub!</h1>
+                    {/* Unlock the doors to endless coding possibilities with my hub! */}
+                    {/* Step into the world of code with my one-stop hub! */}
+                    {/* Unlock your coding potential with my all-in-one hub! */}
+                    <p style={{ maxWidth: '350px' }}>This is a place where I share teachings, showcase experiments, and express my insights on the tech industry.</p>
                 </div>
 
                 <div className="column">
