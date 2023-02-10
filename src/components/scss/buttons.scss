@@ -1,0 +1,44 @@
+// Button
+.button {
+    color: var(--black);
+    border-radius: 4px;
+    padding: 8px 12px;
+    text-decoration: none;
+    font-weight: 500;
+    background-color: transparent;
+    font-size: var(--font-md);
+    font-family: var(--font-sans);
+    cursor: pointer;
+    transition: .3s ease-out;
+}
+
+.button:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.button-full {
+    color: var(--white);
+    background-color: var(--black);
+    border: solid 1px var(--black);
+
+    &:hover {
+        color: var(--black);
+        background-color: var(--white);
+    }
+
+    .dark & {
+        border: solid 1px var(--white);
+        background-color: var(--black);
+        color: var(--white);
+    }
+}
+
+.button-outline {
+    border: solid 1px var(--black);
+
+    .dark & {
+        border: solid 1px var(--white);
+        color: var(--white);
+    }
+}

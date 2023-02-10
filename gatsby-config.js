@@ -47,5 +47,15 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-source-mongodb',
+      options: {
+        dbName: `jpbelley`,
+        collection: [`fragments`],
+        server: { address: 'ac-raz3qcd-shard-00-02.tg8byvu.mongodb.net', port: 27017 },
+        auth: { user: 'JPBelley', password: 'chRsDetqovoNhD4y' },
+        extraParams: { replicaSet: 'cluster0', ssl: true, authSource: `admin`, retryWrites: true }
+      }
+    },
   ],
 }

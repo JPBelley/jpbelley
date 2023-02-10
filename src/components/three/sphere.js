@@ -24,7 +24,7 @@ const ThreeSphere = () => {
         camera.updateProjectionMatrix();
         container.appendChild(renderer.domElement);
 
-        window.addEventListener('resize', () => sceneResize({ width, height, renderer, camera, container }));
+        window.addEventListener('resize', () => sceneResize({ renderer, camera, container }));
 
         const sphereGeometry = new THREE.SphereGeometry(1, 40, 40);
         const sphereMaterial = new THREE.ShaderMaterial({
@@ -89,7 +89,9 @@ const ThreeSphere = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            zIndex: 0}}>
+            zIndex: 0
+            }}
+        >
         </div>
     )
 }

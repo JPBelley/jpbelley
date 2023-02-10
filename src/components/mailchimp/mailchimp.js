@@ -33,7 +33,13 @@ const MailchimpSignup = () => {
     }
 
     return (
-        <form onSubmit={_handleSubmit} id="signup">
+        <form 
+            onSubmit={_handleSubmit} 
+            id="signup"
+            style={{
+                position: 'relative',
+            }}
+        >
             <div className="input-container mc-field-group">
                 <input 
                     type="email"
@@ -42,13 +48,25 @@ const MailchimpSignup = () => {
                     className="required email" 
                     placeholder="Email address"
                     id="mce-EMAIL" 
-                    onChange={(value) => setEmail(value.target.value)} 
+                    onChange={(value) => setEmail(value.target.value)}
+                    style={{marginBottom: '0'}}
                     required 
                 />
                 <span id="mce-EMAIL-HELPERTEXT" className="helper_text"></span>
                 {error && <div className="error">There's an error with your email</div>}
             </div>
-            <button className="mailchimp-submit button button-outline" type="submit" form="signup" value="Submit" style={{marginTop: '10px'}}>Start to learn</button>
+            <button 
+                className="mailchimp-submit button button-full" 
+                type="submit" 
+                form="signup" 
+                value="Submit" 
+                style={{
+                    position: 'absolute',
+                    top: '0',
+                    right: '0',
+                    height: '100%'
+                }}
+            >Start to learn</button>
         </form>
     )
 }
