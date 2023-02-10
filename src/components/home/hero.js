@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import ThreeSphere from "../three/sphere"
 
 const Hero = () => {
