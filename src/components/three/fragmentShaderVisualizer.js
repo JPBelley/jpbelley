@@ -1,9 +1,10 @@
 import * as React from "react"
 import * as THREE from "three"
-import { sceneResize } from "../../../utils/three-utils"
+import { sceneResize } from "../../utils/three-utils"
 
 const FragmentShaderVisualizer = (props) => {
-    const { fragment } = props;
+    const { fragment, height } = props;
+
     let container = React.useRef(null);
     const createScene = () => {
         container = container.current;
@@ -13,7 +14,7 @@ const FragmentShaderVisualizer = (props) => {
         // Create the camera
         var camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
         camera.position.z = 8;
-        // console.log(container.offsetWidth);
+        
         // Resize
         window.addEventListener('resize', () => sceneResize({ width, height, renderer, camera, container }));
 
@@ -81,8 +82,8 @@ const FragmentShaderVisualizer = (props) => {
         <div ref={container} style={{
             width: '100%',
             position: 'relative',
-            paddingTop: '60%',
-            backgroundColor: '#000'
+            // paddingTop: `${height}`,
+            height: '100%',
         }}>
         </div>
     )

@@ -19,6 +19,7 @@ const IndexPage = () => {
           edges {
             node {
               id
+              slug
               name
               code
             }
@@ -85,7 +86,7 @@ const IndexPage = () => {
                 >
                   <Card 
                     title={fragment.node.name}
-                    // date="29/01/2023"
+                    link={`/fragment/${fragment.node.slug}`}
                     fragment={fragment.node.code}
                   />
                 </div>

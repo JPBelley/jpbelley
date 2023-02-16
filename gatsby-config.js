@@ -53,7 +53,7 @@ module.exports = {
         dbName: `jpbelley`,
         collection: [`fragments`],
         server: { address: 'ac-raz3qcd-shard-00-02.tg8byvu.mongodb.net', port: 27017 },
-        auth: { user: 'JPBelley', password: 'chRsDetqovoNhD4y' },
+        auth: { user: 'JPBelley', password: 'wEqzKklA9cvoKL5A' },
         extraParams: { replicaSet: 'cluster0', ssl: true, authSource: `admin`, retryWrites: true }
       }
     },

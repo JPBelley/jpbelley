@@ -1,18 +1,23 @@
 import * as React from "react"
 import "./card.scss"
-import { StaticImage } from "gatsby-plugin-image"
-import FragmentShaderVisualizer from './cardHero/fragment'
+// import { StaticImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
+import FragmentShaderVisualizer from '../three/fragmentShaderVisualizer'
 
 const Card = (props) => {
     const { 
         title, 
         date,
         description,
-        fragment
+        fragment,
+        link
     } = props;
 
     return (
-        <div className="card">
+        <Link 
+            to={link} 
+            className="card"
+        >
             <div className="light">
                 {/* <StaticImage
                     src="../../images/poster.jpg"
@@ -23,9 +28,11 @@ const Card = (props) => {
                     alt=""
                     
                 /> */}
-                <FragmentShaderVisualizer 
+
+                <FragmentShaderVisualizer
                     fragment={fragment}
                 />
+
                 {title && <h3
                     style={{ marginTop: `var(--space-3)` }}
                     >{title}
@@ -40,7 +47,7 @@ const Card = (props) => {
                 {date && <time className="" dateTime="" style={{textTransform: 'uppercase', fontWeight: 700}}>{date}</time>}
             </div>
             {description && <p>{description}</p>}
-        </div>
+        </Link>
     )
 }
 

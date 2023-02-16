@@ -1,0 +1,47 @@
+/* Sections */
+section {
+    margin: 0 auto;
+    padding: var(--space-4) var(--size-gutter);
+    padding: 50px 0;
+    position: relative;
+    z-index: 1;
+
+    @media screen and (min-width: 800px) {
+        padding: 150px 0;
+    }
+
+    >div {
+        max-width: var(--container);
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+.section-lg {
+    >div {
+        max-width: var(--container-lg);
+    }
+}
+
+.dark {
+    background-color: var(--black);
+
+    +.dark {
+        padding-top: 0;
+    }
+}
+
+.light {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    color: var(--black);
+
+    a {
+        color: var(--black);
+    }
+
+    &.section {
+        padding-right: var(--size-gutter);
+        padding-left: var(--size-gutter);
+    }
+}

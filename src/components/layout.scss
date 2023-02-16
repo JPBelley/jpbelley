@@ -1,6 +1,11 @@
-@import './scss/utils.scss';
-@import './scss/root.scss';
-@import './scss/buttons.scss';
+@import '../scss/utils.scss';
+@import '../scss/root.scss';
+@import '../scss/fonts.scss';
+@import '../scss/buttons.scss';
+@import '../scss/typography.scss';
+@import '../scss/spacings.scss';
+
+@import './layout/section/section.scss';
 
 html {
   -webkit-text-size-adjust: 100%;
@@ -14,7 +19,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
-  // font-family: sans-serif;
   font-family: var(--font-sans);
   font-weight: normal;
   margin: 0;
@@ -49,28 +53,7 @@ strong {
 dfn {
   font-style: italic;
 }
-h1 {
-  margin: 0;
-  margin-bottom: 1rem;
-  padding: 0;
-  line-height: var(--line-height-dense);
-  letter-spacing: -0.01em;
-  font-size: 70px;
-}
-h1 > b {
-  color: var(--color-primary);
-}
-h2 {
-  margin: 0;
-  line-height: var(--line-height-dense);
-  margin-bottom: 1rem;
-  padding: 0;
-  font-size: 48px;
 
-  &.text-center {
-    margin-bottom: 3rem;
-  }
-}
 img {
   border-style: none;
   max-width: 100%;
@@ -131,7 +114,7 @@ pre {
   margin-bottom: var(--space-4);
   font-size: 0.875rem;
   line-height: var(--line-height-normal);
-  background: hsla(0, 0%, 0%, 0.04);
+  background: var(--color-code-bg);
   border-radius: var(--border-radius);
   overflow: auto;
   word-wrap: normal;
@@ -237,49 +220,6 @@ input {
   top: 40px;
   font-size: var(--font-xs);
   color: red;
-}
-
-/* Sections */
-section {
-  margin: 0 auto;
-  padding: var(--space-4) var(--size-gutter);
-  padding: 50px 0;
-
-  @media screen and (min-width: 800px) {
-    padding: 150px 0;
-  }
-
-  > div {
-    max-width: var(--container);
-    margin: 0 auto;
-    width: 100%;
-  }
-}
-.section-lg {
-  > div {
-      max-width: var(--container-lg);
-  }
-}
-.dark {
-  background-color: var(--black);
-
-  + .dark {
-    padding-top: 0;
-  }
-}
-.light {
-  background-color: var(--white);
-  border-radius: var(--border-radius-md);
-  color: var(--black);
-
-  a {
-      color: var(--black);
-  }
-
-  &.section {
-    padding-right: var(--size-gutter);
-    padding-left: var(--size-gutter);
-  }
 }
 
 /* Columns */

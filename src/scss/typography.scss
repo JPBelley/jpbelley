@@ -1,0 +1,61 @@
+.typo-h0 {
+    font-size: clamp(30px, 10vw, 150px);
+    font-family: var(--font-general-sans);
+    text-transform: uppercase;
+}
+
+.typo-h1,
+h1 {
+    margin: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+    line-height: var(--line-height-dense);
+    letter-spacing: -0.01em;
+    font-size: 70px;
+}
+
+.typo-h2,
+h2 {
+    margin: 0;
+    line-height: var(--line-height-dense);
+    margin-bottom: 1rem;
+    padding: 0;
+    font-size: 48px;
+
+    &.text-center {
+        margin-bottom: 3rem;
+    }
+}
+
+.typo-h3,
+h3 {
+    
+}
+
+.typo-h4,
+h4 {}
+
+.typo-h5,
+h5 {}
+
+.typo-h6,
+h6 {}
+
+/***
+* Typo formats
+*/
+.uppercase {
+    text-transform: uppercase;
+}
+/***
+* Typo alignments
+*/
+.text-left {
+    text-align: left;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
