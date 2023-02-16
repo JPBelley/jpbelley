@@ -3,9 +3,9 @@ import * as THREE from "three"
 import { sceneResize } from "../../utils/three-utils"
 
 const FragmentShaderVisualizer = (props) => {
-    const { fragment, height } = props;
+    const { fragment, threeContainer } = props;
 
-    let container = React.useRef(null);
+    let container = threeContainer;
     const createScene = () => {
         container = container.current;
         var scene = new THREE.Scene();
@@ -79,13 +79,8 @@ const FragmentShaderVisualizer = (props) => {
     }, []);
 
     return (
-        <div ref={container} style={{
-            width: '100%',
-            position: 'relative',
-            // paddingTop: `${height}`,
-            height: '100%',
-        }}>
-        </div>
+        <>
+        </>
     )
 }
 

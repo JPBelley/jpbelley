@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useRef } from "react"
 import "./card.scss"
 // import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
@@ -12,6 +12,7 @@ const Card = (props) => {
         fragment,
         link
     } = props;
+    const threeContainer = useRef(0);
 
     return (
         <Link 
@@ -29,10 +30,21 @@ const Card = (props) => {
                     
                 /> */}
 
-                <FragmentShaderVisualizer
-                    fragment={fragment}
-                />
-
+                <div 
+                    ref={threeContainer}
+                    style={{
+                        width: '100%',
+                        position: 'relative',
+                        paddingTop: '60%',
+                        height: '100%',
+                        background: '#000'
+                    }}
+                >
+                    <FragmentShaderVisualizer
+                        fragment={fragment}
+                        threeContainer={threeContainer}
+                    />
+                </div>
                 {title && <h3
                     style={{ marginTop: `var(--space-3)` }}
                     >{title}
