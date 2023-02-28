@@ -14,7 +14,7 @@ import { useStaticQuery, graphql } from "gatsby"
 const IndexPage = () => {
   const fragments = useStaticQuery(graphql`
       query MyQuery {
-        allMongodbJpbelleyFragments(limit: 3) {
+        allMongodbJpbelleyFragments(limit: 3, sort: {mongodb_id: ASC}) {
           totalCount
           edges {
             node {

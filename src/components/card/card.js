@@ -19,7 +19,7 @@ const Card = (props) => {
             to={link} 
             className="card"
         >
-            <div className="light">
+            <div>
                 {/* <StaticImage
                     src="../../images/poster.jpg"
                     loading="eager"
@@ -37,7 +37,6 @@ const Card = (props) => {
                         position: 'relative',
                         paddingTop: '60%',
                         height: '100%',
-                        background: '#000'
                     }}
                 >
                     <FragmentShaderVisualizer
@@ -45,15 +44,21 @@ const Card = (props) => {
                         threeContainer={threeContainer}
                     />
                 </div>
-                {title && <h3
-                    style={{ marginTop: `var(--space-3)` }}
-                    >{title}
-                </h3>}
+                <div
+                    className="light" 
+                >
+                    {title && <h3
+                        style={{ marginTop: `var(--space-3)` }}
+                        >{title}
+                    </h3>}
+                </div>
             </div>
-            <div style={{ 
-                marginTop: '8px',
-                fontSize: 'var(--font-sm)'
-            }}>
+            <div 
+                style={{ 
+                    marginTop: '8px',
+                    fontSize: 'var(--font-sm)'
+                }}
+            >
                 <span>
                 </span>
                 {date && <time className="" dateTime="" style={{textTransform: 'uppercase', fontWeight: 700}}>{date}</time>}
