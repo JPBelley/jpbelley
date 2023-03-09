@@ -15,12 +15,10 @@ const Fragment = ({ pageContext }) => {
       <Link to="/" style={{display: 'block', paddingTop: '15px'}}>Home</Link>
       <Section>
           <div style={{
-            position: 'relative',
-            // marginTop: "40vh"
+            position: 'relative'
           }}>
-            <h1 className="typo-h0 text-center" style={{marginTop: '-75px'}}>Fragment</h1>
+          <h1 className="typo-h0 text-center" style={{ marginTop: '-75px' }}>Fragment</h1>
             <pre style={{
-              // position: 'relative',
               marginTop: "40vh",
               marginRight: "auto",
               marginLeft: "auto",

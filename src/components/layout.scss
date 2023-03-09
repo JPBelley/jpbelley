@@ -7,6 +7,12 @@
 
 @import './layout/section/section.scss';
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -14,6 +20,7 @@ html {
   font-size: var(--font-md);
   line-height: var(--line-height-normal);
   overflow-y: scroll;
+  scroll-behavior: initial; // For Lenis
 }
 body {
   -moz-osx-font-smoothing: grayscale;
@@ -25,6 +32,11 @@ body {
   word-wrap: break-word;
   background-color: var(--black);
   color: var(--white);
+}
+html,
+body {
+  min-height: 100%; // For Lenis
+  height: auto; // For Lenis
 }
 a {
   background-color: transparent;

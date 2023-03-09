@@ -7,6 +7,7 @@ import Hero from "../components/home/hero"
 import Card from "../components/card/card"
 import Seo from "../components/seo"
 import MailchimpSignup from "../components/mailchimp/mailchimp"
+import AnimateText from '../utils/animate-text'
 // import * as styles from "../components/index.module.css"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -73,8 +74,8 @@ const IndexPage = () => {
         {/* Fragment Shaders */}
         <section className="section section-lg dark">
           <div>
-            <h2 className="text-center">Fragment Shaders</h2>
-            <p className="text-center mx-auto">As I delve deeper into the world of creative coding, the endless possibilities of fragment shaders never cease to amaze me, constantly inspiring my imagination. Over the years, I've come across some fragment shaders that have caught my attention and made a note of them for future reference, highlighting their potential to fuel my creativity. Feel free to explore them as well and discover their potential for your own creative endeavors.</p>
+            <h2 className="text-center typo-h0"><AnimateText animationType="heading">Fragment Shaders</AnimateText></h2>
+            <p className="text-center mx-auto"><AnimateText animationType="paragraph">As I delve deeper into the world of creative coding, the endless possibilities of fragment shaders never cease to amaze me, constantly inspiring my imagination. Over the years, I've come across some fragment shaders that have caught my attention and made a note of them for future reference, highlighting their potential to fuel my creativity. Feel free to explore them as well and discover their potential for your own creative endeavors.</AnimateText></p>
             <div 
               className="columns columns-3 small-gap"
               style={{marginTop: '70px'}}
@@ -96,11 +97,11 @@ const IndexPage = () => {
         </section>
 
         {/* About */}
-        <section className="section section-lg dark">
+        <section className="section section-lg dark" style={{margin: '300px auto'}}>
           <div className="text-center">
-            <h2>About myself</h2>
+            <h2 className="typo-h0 mx-auto" style={{maxWidth: '950px'}}><AnimateText animationType="heading">About myself</AnimateText></h2>
             <p style={{ margin: '0 auto' }}>
-              As a front-end developer, my passion for code goes beyond just improving my skills. I am driven by the desire to share my discoveries and teach others through my work. This website is a reflection of that passion and a platform for learning and exchange of ideas about coding. My name is JP, and I welcome you to join me in this journey.
+              <AnimateText animationType="paragraph">As a front-end developer, my passion for code goes beyond just improving my skills. I am driven by the desire to share my discoveries and teach others through my work. This website is a reflection of that passion and a platform for learning and exchange of ideas about coding. My name is JP, and I welcome you to join me in this journey.</AnimateText>
             </p>
           </div>
         </section>

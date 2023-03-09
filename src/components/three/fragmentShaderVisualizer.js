@@ -1,9 +1,10 @@
-import * as React from "react"
+import React, { useRef } from "react"
 import * as THREE from "three"
 import { sceneResize } from "../../utils/three-utils"
 
 const FragmentShaderVisualizer = (props) => {
     const { fragment, threeContainer } = props;
+    const requestRef = useRef()
 
     let container = threeContainer;
     const createScene = () => {
@@ -34,11 +35,9 @@ const FragmentShaderVisualizer = (props) => {
             uniforms: {
                 time: { value: 0.0 }
             },
-            // wireframe: true,
+            wireframe: true,
             vertexShader: `
                 varying vec2 vUv;
-                uniform float time;
-                uniform vec2 mouse;
 
                 void main() {
                     vUv = uv;
@@ -61,9 +60,8 @@ const FragmentShaderVisualizer = (props) => {
         // Animate the cube
         const plusOrMinus = Math.random() < 0.5 ? -1 : 1;
         const differentMovement = Math.random() * 0.002 * plusOrMinus;
-
         function animate() {
-            requestAnimationFrame(animate);
+            requestRef.current = requestAnimationFrame(animate);
             customMaterial.uniforms.time.value += 0.1;
             cube.rotation.x += differentMovement;
             cube.rotation.y += differentMovement;
@@ -76,12 +74,10 @@ const FragmentShaderVisualizer = (props) => {
 
     React.useEffect(() => {
         createScene();
+        return () => cancelAnimationFrame(requestRef.current);
     }, []);
 
-    return (
-        <>
-        </>
-    )
+    return <></>
 }
 
 export default FragmentShaderVisualizer
