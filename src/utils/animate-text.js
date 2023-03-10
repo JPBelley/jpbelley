@@ -2,9 +2,7 @@ import React, { useRef, useEffect } from "react"
 import { useLenis } from '@studio-freight/react-lenis'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Splitting from "splitting";
-import "splitting/dist/splitting.css";
-import "splitting/dist/splitting-cells.css";
+import spanText from './span';
 gsap.registerPlugin(ScrollTrigger);
 
 const AnimateText = ({ children, animationType }) => {
@@ -39,7 +37,7 @@ const AnimateText = ({ children, animationType }) => {
         });
     }
 
-    const animationParagraph = (chars) => {
+    const animationParagraph = () => {
 
         gsap.fromTo(textToAnimate.current, {
             transformOrigin: '0% 50%',
@@ -72,17 +70,13 @@ const AnimateText = ({ children, animationType }) => {
     }
 
     useEffect(() => {
-        Splitting({ target: textToAnimate.current, by: 'chars' })
         const chars = textToAnimate.current.querySelectorAll('.char');
 
         if (animationType === 'heading') animationHeading(chars);
         else animationParagraph(chars);
     }, [])
 
-
-    return (
-        <span className="splitting" ref={textToAnimate}>{children}</span>
-    )
+    return <span className="splitting" ref={textToAnimate}>{spanText(children)}</span>
 }
 
 export default AnimateText
