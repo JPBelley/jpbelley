@@ -1,0 +1,8 @@
+.tp-rotv {
+  @media screen and (min-width: 800px) {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+    }
+}

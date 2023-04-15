@@ -27,7 +27,8 @@
     "react-dom": "^18.1.0",
     "sass": "^1.55.0",
     "splitting": "^1.0.6",
-    "three": "^0.145.0"
+    "three": "^0.145.0",
+    "tweakpane": "^3.1.7"
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
