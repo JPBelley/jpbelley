@@ -3,7 +3,7 @@ import * as THREE from "three"
 // import { sceneResize } from "../../utils/three-utils"
 
 const ShaderVisualizerTool = (props) => {
-    const { fragment, threeContainer, red, green, blue, callback } = props;
+    const { fragment, threeContainer, red, green, blue, scene, callback } = props;
     const requestRef = useRef()
     const [elements, setElements] = useState({
         scene: new THREE.Scene(),
@@ -47,9 +47,9 @@ const ShaderVisualizerTool = (props) => {
         // Create a custom material with a custom fragment shader
         elements.customMaterial = new THREE.ShaderMaterial({
             uniforms: {
-                red: { value: 0.0 },
-                green: { value: 0.0 },
-                blue: { value: 0.0 },
+                red: { value: 1.0 },
+                green: { value: 1.0 },
+                blue: { value: 1.0 },
                 time: { value: 0.0 },
             },
             wireframe: true,
@@ -78,12 +78,13 @@ const ShaderVisualizerTool = (props) => {
 
     const plusOrMinus = Math.random() < 0.5 ? -1 : 1;
     const differentMovement = Math.random() * 0.002 * plusOrMinus;
-    const animate = (red) => {
+    const animate = () => {
         // callback();
         elements.customMaterial.uniforms.red.value = red;
         elements.customMaterial.uniforms.green.value = green;
         elements.customMaterial.uniforms.blue.value = blue;
         elements.customMaterial.uniforms.time.value += 0.1;
+        elements.customMaterial.wireframe = scene.wireframe;
         elements.cube.rotation.x += differentMovement;
         elements.cube.rotation.y += differentMovement;
         elements.cube.rotation.z += differentMovement;
@@ -93,14 +94,15 @@ const ShaderVisualizerTool = (props) => {
 
     useEffect(() => {
         createScene(threeContainer.current);
-        animate(red, green, blue);
+        animate();
         return () => cancelAnimationFrame(requestRef.current);
     }, []);
 
     useEffect(() => {
+        console.log(scene);
         cancelAnimationFrame(requestRef.current);
-        animate(red, green, blue);
-    }, [red, green, blue]);
+        animate();
+    }, [red, green, blue, scene]);
 
     return <></>
 }

@@ -10,6 +10,7 @@ import { Pane } from 'tweakpane';
 const FragmentTool = () => {
     const threeContainer = useRef(0);
     const container = useRef(0);
+    const [scene, setScene] = useState({wireframe: true})
     const [red, setRed] = useState(1.0)
     const [green, setGreen] = useState(1.0)
     const [blue, setBlue] = useState(1.0)
@@ -23,13 +24,13 @@ const FragmentTool = () => {
         }`
     );
     const PARAMS = {
-        factor: 123,
-        title: 'hello',
-        color: { r: 1, g: 0, b: 0.33 },
+        wireframe: true,
+        color: { r: 255, g: 255, b: 255 },
     };
 
     useEffect(() => {
         const pane = new Pane({ container: container.current });
+        const wireframe = pane.addInput(PARAMS, 'wireframe');
         const input = pane.addInput(PARAMS, 'color', {
             view: 'color',
         });
@@ -39,6 +40,9 @@ const FragmentTool = () => {
             setGreen(ev.value.g/255);
             setBlue(ev.value.b/255);
         });
+
+        wireframe.on('change', (ev) => setScene({wireframe: ev.value}));
+
     }, []);
 
     return (
@@ -76,6 +80,7 @@ const FragmentTool = () => {
                         <ShaderVisualizerTool
                             fragment={code}
                             threeContainer={threeContainer}
+                            scene={scene}
                             red={red}
                             green={green}
                             blue={blue}

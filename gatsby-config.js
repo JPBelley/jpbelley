@@ -8,10 +8,10 @@ module.exports = {
   // },
   pathPrefix: "",
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Improve your coding skills`,
+    description: `This is a place where I share teachings, showcase experiments, and express my insights on the tech industry.`,
+    author: `@JPBelley`,
+    siteUrl: `https://jeanphilippebelley.com/`,
   },
   plugins: [
     `gatsby-plugin-image`,
