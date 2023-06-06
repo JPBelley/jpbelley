@@ -5,44 +5,33 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Section from "../components/layout/section/section"
 import ShaderVisualizerTool from '../components/three/shaderVisualizerTool'
-import { Pane } from 'tweakpane';
+import ShaderControls from './fragment-tool/pane'
 
 const FragmentTool = () => {
     const threeContainer = useRef(0);
     const container = useRef(0);
     const [scene, setScene] = useState({wireframe: true})
-    const [red, setRed] = useState(1.0)
-    const [green, setGreen] = useState(1.0)
-    const [blue, setBlue] = useState(1.0)
+    const [attributes, setAttributes] = useState({
+        red: 1.0,
+        green: 1.0,
+        blue: 1.0
+    });
     const [code, setCode] = useState(`
         uniform float red;
         uniform float green;
         uniform float blue;
+        // uniform float time;
+        // varying vec2 vUv;
 
         void main() {
-            gl_FragColor = vec4(red,green, blue, 1.0);
+            // vec2 p = vUv;
+            // float r = sin(time) * red * p.x; 
+            gl_FragColor = vec4(red, green, blue, 1.0);
         }`
     );
-    const PARAMS = {
-        wireframe: true,
-        color: { r: 255, g: 255, b: 255 },
-    };
 
     useEffect(() => {
-        const pane = new Pane({ container: container.current });
-        const wireframe = pane.addInput(PARAMS, 'wireframe');
-        const input = pane.addInput(PARAMS, 'color', {
-            view: 'color',
-        });
-
-        input.on('change', function (ev) {
-            setRed(ev.value.r/255);
-            setGreen(ev.value.g/255);
-            setBlue(ev.value.b/255);
-        });
-
-        wireframe.on('change', (ev) => setScene({wireframe: ev.value}));
-
+        ShaderControls({container, setScene, attributes, setAttributes});
     }, []);
 
     return (
@@ -64,7 +53,7 @@ const FragmentTool = () => {
                         <code>
                             {`
                                 void main() {
-                                    gl_FragColor = vec4(${red.toFixed(2)}, ${green.toFixed(2)}, ${blue.toFixed(2)}, 1.0);
+                                    gl_FragColor = vec4(${attributes.red.toFixed(2)}, ${attributes.green.toFixed(2)}, ${attributes.blue.toFixed(2)}, 1.0);
                                 }
                             `}
                         </code>
@@ -81,9 +70,7 @@ const FragmentTool = () => {
                             fragment={code}
                             threeContainer={threeContainer}
                             scene={scene}
-                            red={red}
-                            green={green}
-                            blue={blue}
+                            attributes={attributes}
                         />
                     </div>
                 </div>

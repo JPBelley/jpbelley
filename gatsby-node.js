@@ -1,11 +1,5 @@
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  createPage({
-    path: "/using-dsg",
-    component: require.resolve("./src/templates/using-dsg.js"),
-    context: {},
-    defer: true,
-  })
 
   const { data } = await graphql(`
       query MyQuery {
@@ -33,6 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
         slug: slug,
         fragment: edge.node,
       },
+      defer: true,
     })
   })
 }

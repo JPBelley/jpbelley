@@ -3,8 +3,9 @@ import * as THREE from "three"
 // import { sceneResize } from "../../utils/three-utils"
 
 const ShaderVisualizerTool = (props) => {
-    const { fragment, threeContainer, red, green, blue, scene, callback } = props;
-    const requestRef = useRef()
+    const { fragment, threeContainer, attributes, scene, callback } = props;
+    const { red, green, blue } = attributes;
+    const requestRef = useRef();
     const [elements, setElements] = useState({
         scene: new THREE.Scene(),
         camera: new THREE.PerspectiveCamera(75, threeContainer.offsetWidth + 1 / threeContainer.offsetHeight, 0.1, 1000),
@@ -23,7 +24,7 @@ const ShaderVisualizerTool = (props) => {
     let container = threeContainer;
     const createScene = () => {
         container = container.current;
-        // var scene = new THREE.Scene();
+
         let width = container.offsetWidth + 1;
         let height = container.offsetHeight;
         // Create the camera
@@ -99,10 +100,9 @@ const ShaderVisualizerTool = (props) => {
     }, []);
 
     useEffect(() => {
-        console.log(scene);
         cancelAnimationFrame(requestRef.current);
         animate();
-    }, [red, green, blue, scene]);
+    }, [attributes, scene]);
 
     return <></>
 }
