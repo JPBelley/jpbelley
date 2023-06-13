@@ -39,19 +39,28 @@ const ThreeSphere = () => {
             side: THREE.DoubleSide,
             fragmentShader: fragment,
             vertexShader: vertex,
-            wireframe: true
+            // wireframe: true
         })
         sphereMaterial.needsUpdate = true;
         const sphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
         sphere.geometry.elementsNeedUpdate = true;
+        // sphere.rotation.z = 14;
         scene.add(sphere);
 
-        window.addEventListener('mousemove', (event) => {
+        container.addEventListener('mousemove', (event) => {
             mouse = {
                 x: (event.clientX / width) * 2 - 1,
                 y: - (event.clientY / height) * 2 + 1
             }
             // sphere.material.uniforms.hoverState.value = 1.0;
+
+        }, false);
+
+        container.addEventListener('mouseleave', () => {
+            mouse = {
+                x: 0,
+                y: 0
+            }
 
         }, false);
 
@@ -67,7 +76,7 @@ const ThreeSphere = () => {
             sphere.material.uniforms.hoverState.value = lerp(sphere.material.uniforms.hoverState.value, mouse.x*0.01, 0.05);
             // sphere.material.uniforms.hoverState.value = mouse.x * 0.01;
             sphere.material.uniforms.time.value = lerp(sphere.material.uniforms.time.value, mouse.y * 0.01, 0.05);
-            sphere.rotation.x += 0.001;
+            sphere.rotation.z += 0.001;
             sphere.rotation.y += 0.001;
 
             renderer.render(scene, camera);

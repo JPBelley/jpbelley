@@ -1,5 +1,5 @@
 // varying float vNoise;
-// varying vec2 vUv;
+varying vec2 vUv;
 // uniform sampler2D uImage;
 // uniform float time;
 
@@ -10,10 +10,11 @@ uniform float u_time;
 vec3 colorA = vec3(0.149,0.141,0.912);
 vec3 colorB = vec3(1.000,0.833,0.224);
 
+varying vec3 vPosition;
 
 void main()	{
 
-    // vec2 newUV = vUv;
+    vec2 newUV = vUv;
 
 
     // vec4 oceanView = texture2D(uImage,newUV);
@@ -36,6 +37,6 @@ void main()	{
     // mix the two colors
     color = mix(colorA, colorB, pct);
 
-    //gl_FragColor = vec4(color,1.0);
-    gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
+    gl_FragColor = vec4(vPosition.yyy, 1.0);
+    // gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
 }
