@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Section from "../components/layout/section/section"
-import FragmentShaderVisualizer from '../components/three/fragmentShaderVisualizer'
+import ShaderVisualizer from '../components/three/ShaderVisualizer'
 
 const Fragment = ({ pageContext }) => {
   const { code } = pageContext.fragment;
@@ -36,7 +36,7 @@ const Fragment = ({ pageContext }) => {
                 zIndex: -1
               }}
             >
-              <FragmentShaderVisualizer
+              <ShaderVisualizer
                 fragment={code}
                 threeContainer={threeContainer}
               />

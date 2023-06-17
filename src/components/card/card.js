@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import "./card.scss"
 // import { StaticImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
-import FragmentShaderVisualizer from '../three/fragmentShaderVisualizer'
+import ShaderVisualizer from '../three/ShaderVisualizer'
 
 const Card = (props) => {
     const { 
@@ -10,6 +10,7 @@ const Card = (props) => {
         date,
         description,
         fragment,
+        vertex,
         link
     } = props;
     const threeContainer = useRef(0);
@@ -39,8 +40,9 @@ const Card = (props) => {
                         height: '100%',
                     }}
                 >
-                    <FragmentShaderVisualizer
+                    <ShaderVisualizer
                         fragment={fragment}
+                        vertex={vertex}
                         threeContainer={threeContainer}
                     />
                 </div>

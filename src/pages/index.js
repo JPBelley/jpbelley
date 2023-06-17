@@ -72,7 +72,7 @@ const IndexPage = () => {
         </section> */}
 
         {/* Fragment Shaders */}
-        <section className="section section-lg dark">
+        <section className="section section-lg dark" style={{ margin: '300px auto' }}>
           <div>
             <h2 className="text-center typo-h0"><AnimateText animationType="heading">Fragment Shaders</AnimateText></h2>
             <p className="text-center mx-auto"><AnimateText animationType="paragraph">As I delve deeper into the world of creative coding, the endless possibilities of fragment shaders never cease to amaze me, constantly inspiring my imagination. Over the years, I've come across some fragment shaders that have caught my attention and made a note of them for future reference, highlighting their potential to fuel my creativity. Feel free to explore them as well and discover their potential for your own creative endeavors.</AnimateText></p>
@@ -95,6 +95,40 @@ const IndexPage = () => {
             </div>
           </div>
         </section>
+
+        {/* Vertex Shaders */}
+        {/* <section className="section section-lg dark" style={{ margin: '300px auto' }}>
+          <div>
+            <h2 className="text-center typo-h0" style={{ maxWidth: '1200px', margin: '0 auto'}}><AnimateText animationType="heading">Vertex Shaders</AnimateText></h2>
+            <p className="text-center mx-auto"><AnimateText animationType="paragraph">As I delve deeper into the world of creative coding, the endless possibilities of fragment shaders never cease to amaze me, constantly inspiring my imagination. Over the years, I've come across some fragment shaders that have caught my attention and made a note of them for future reference, highlighting their potential to fuel my creativity. Feel free to explore them as well and discover their potential for your own creative endeavors.</AnimateText></p>
+            <div 
+              className="columns columns-3 small-gap"
+              style={{marginTop: '70px'}}
+            >
+              {fragments.allMongodbJpbelleyFragments.edges.map((fragment, index) => 
+                <div 
+                  className="column"
+                  key={`fragment-${index}`}
+                >
+                  <Card 
+                    title={fragment.node.name}
+                    link={`/fragment/${fragment.node.slug}`}
+                    // fragment={fragment.node.code}
+                    vertex={`  
+                      uniform float time;
+
+                      void main() {
+                        // Example: Displace vertices based on time
+                        vec3 displacedPosition = position + vec3(sin(time), cos(time), 0.0);
+
+                        gl_Position = projectionMatrix * modelViewMatrix * vec4(displacedPosition, 1.0);
+                      }`}
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+        </section> */}
 
         {/* About */}
         <section className="section section-lg dark" style={{margin: '300px auto'}}>

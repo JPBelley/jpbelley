@@ -10,7 +10,7 @@ const ShaderControls = (props) => {
     
     const pane = new Pane({
         title: 'Fragment Controls',
-        container: container.current
+        container: container
     });
     const wireframe = pane.addInput(PARAMS, 'wireframe');
     const fragment = pane.addFolder({

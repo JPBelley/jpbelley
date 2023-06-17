@@ -5,7 +5,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Section from "../components/layout/section/section"
 import ShaderVisualizerTool from '../components/three/shaderVisualizerTool'
-import ShaderControls from './fragment-tool/pane'
+import ShaderControls from '../components/fragment-tool/pane'
 
 const FragmentTool = () => {
     const threeContainer = useRef(0);
@@ -31,7 +31,7 @@ const FragmentTool = () => {
     );
 
     useEffect(() => {
-        ShaderControls({container, setScene, attributes, setAttributes});
+        ShaderControls({ container: container.current, setScene, attributes, setAttributes});
     }, []);
 
     return (

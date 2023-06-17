@@ -37,6 +37,6 @@ void main()	{
     // mix the two colors
     color = mix(colorA, colorB, pct);
 
-    gl_FragColor = vec4(vPosition.yyy, 1.0);
+    gl_FragColor = vec4(max(vPosition.yyy,0.4), 1.0);
     // gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);
 }

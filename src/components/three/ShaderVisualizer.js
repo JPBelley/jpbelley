@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useEffect } from "react"
 import * as THREE from "three"
 import { sceneResize } from "../../utils/three-utils"
 import BasicFragment from "../../shaders/basic-fragment.glsl"
@@ -11,6 +11,7 @@ const ShaderVisualizer = (props) => {
     const fragmentShader = fragment || BasicFragment;
 
     let container = threeContainer;
+
     const createScene = () => {
         container = container.current;
         var scene = new THREE.Scene();
@@ -68,7 +69,7 @@ const ShaderVisualizer = (props) => {
     }
 
 
-    React.useEffect(() => {
+    useEffect(() => {
         createScene();
         return () => cancelAnimationFrame(requestRef.current);
     }, []);
