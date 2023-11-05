@@ -1,5 +1,5 @@
 import * as React from "react"
-// import { Link } from "gatsby"
+import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
@@ -64,12 +64,14 @@ const IndexPage = () => {
         </section>
 
         {/* Course */}
-        {/* <section className="section section-lg dark">
+        <section className="section section-lg dark" style={{ margin: '300px auto' }}>
           <div className="text-center">
-            <h2>The course</h2>
-            <p style={{ margin: '0 auto' }}></p>
+            <h2 className="text-center typo-h0"><AnimateText animationType="heading">The course</AnimateText></h2>
+            <p className="text-center mx-auto" style={{marginBottom: '64px'}}><AnimateText animationType="paragraph">Embark on a transformative learning journey with this course, where we'll delve deep into the fascinating world of website development. From the fundamental building blocks of HTML and CSS to the intricacies of constructing a sophisticated design system, you'll gain a comprehensive understanding of web development. As you progress through the course, you'll have the opportunity to craft your own design system, a vital tool in modern web design.</AnimateText></p>
+            <p className="text-center mx-auto" style={{ marginBottom: '64px' }}><AnimateText animationType="paragraph">Once your design system takes shape, you'll find yourself equipped with the knowledge and skills necessary to tackle more complex projects and breathe life into your very own website creations. By the course's conclusion, you won't just possess newfound expertise, but you'll have a fully functional website to call your own. This website will be your canvas, ready for your creative touch, where you can personalize it to meet your unique needs and showcase your individuality. Join us on this educational adventure, and leave with not only valuable insights but also a dynamic website that's a reflection of your vision and creativity.</AnimateText></p>
+            <a className="button button-full" href="http://localhost:8002/your-website/index.html" target="_blank">See you website</a>
           </div>
-        </section> */}
+        </section>
 
         {/* Fragment Shaders */}
         <section className="section section-lg dark" style={{ margin: '300px auto' }}>
