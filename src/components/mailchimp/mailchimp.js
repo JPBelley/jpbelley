@@ -36,8 +36,10 @@ const MailchimpSignup = () => {
         <form 
             onSubmit={_handleSubmit} 
             id="signup"
+            className="mx-auto"
             style={{
                 position: 'relative',
+                maxWidth: '500px'
             }}
         >
             <div className="input-container mc-field-group">

@@ -37,16 +37,17 @@ const IndexPage = () => {
 
         {/* Product */}
         <section className="section light">
-          <div className="columns columns-2 small-gap">
-            <div className="column">
-              <h2>Want to learn coding?</h2>
-              <p>Allow me to guide you on a journey of discovery and development, as we explore the intricacies of web creation together.</p>
-              <p>I am thrilled to announce that I am currently crafting a comprehensive course, designed to empower individuals with the knowledge and skills to code their very own website. The course is progressing smoothly, but for those eager to delve in, a beta version is currently open for enrollment. I have also created a <a href="https://discord.gg/2A9ww4gDTT" target="_blank" rel="noreferrer">Discord</a> channel for any inquiries or feedback related to the course, providing a community for learning and growth. Join me in this exciting journey of web development!</p>
+          {/* <div className="columns columns-2 small-gap"> */}
+            {/* <div className="column"> */}
+          <h2 className="text-center typo-h0"><AnimateText animationType="heading">Want to learn coding?</AnimateText></h2>
+              {/* <h2>Want to learn coding?</h2> */}
+            <p className="text-center mx-auto" style={{ marginBottom: '64px' }}>Allow me to guide you on a journey of discovery and development, as we explore the intricacies of web creation together.</p>
+            <p className="text-center mx-auto" style={{ marginBottom: '64px' }}>I am thrilled to announce that I am currently crafting a comprehensive course, designed to empower individuals with the knowledge and skills to code their very own website. The course is progressing smoothly, but for those eager to delve in, a beta version is currently open for enrollment. I have also created a <a href="https://discord.gg/2A9ww4gDTT" target="_blank" rel="noreferrer">Discord</a> channel for any inquiries or feedback related to the course, providing a community for learning and growth. Join me in this exciting journey of web development!</p>
               {/* <Link className="button button-outline" to="page-2">Learn now</Link> */}
-              <MailchimpSignup  />
-            </div>
+              <MailchimpSignup />
+            {/* </div> */}
 
-            <div className="column">
+            {/* <div className="column">
               <StaticImage
                 src="../images/product.jpg"
                 loading="eager"
@@ -59,8 +60,8 @@ const IndexPage = () => {
                   borderRadius: `var(--border-radius-md)`
                 }}
               />
-            </div>
-          </div>
+            </div> */}
+          {/* </div> */}
         </section>
 
         {/* Course */}
@@ -69,7 +70,7 @@ const IndexPage = () => {
             <h2 className="text-center typo-h0"><AnimateText animationType="heading">The course</AnimateText></h2>
             <p className="text-center mx-auto" style={{marginBottom: '64px'}}><AnimateText animationType="paragraph">Embark on a transformative learning journey with this course, where we'll delve deep into the fascinating world of website development. From the fundamental building blocks of HTML and CSS to the intricacies of constructing a sophisticated design system, you'll gain a comprehensive understanding of web development. As you progress through the course, you'll have the opportunity to craft your own design system, a vital tool in modern web design.</AnimateText></p>
             <p className="text-center mx-auto" style={{ marginBottom: '64px' }}><AnimateText animationType="paragraph">Once your design system takes shape, you'll find yourself equipped with the knowledge and skills necessary to tackle more complex projects and breathe life into your very own website creations. By the course's conclusion, you won't just possess newfound expertise, but you'll have a fully functional website to call your own. This website will be your canvas, ready for your creative touch, where you can personalize it to meet your unique needs and showcase your individuality. Join us on this educational adventure, and leave with not only valuable insights but also a dynamic website that's a reflection of your vision and creativity.</AnimateText></p>
-            <a className="button button-full" href="http://localhost:8002/your-website/index.html" target="_blank">See you website</a>
+            <a className="button button-full" href="./your-website/index.html" target="_blank">See your website</a>
           </div>
         </section>
 
