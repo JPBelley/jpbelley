@@ -44,10 +44,16 @@ body {
 
 h1 {
     text-transform: uppercase;
-    font-size: 150px;
+    font-size: 30px;
     text-transform: uppercase;
     line-height: 90%;
     margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 150px;
+    }
 }
 
 h2 {
@@ -142,10 +148,13 @@ img {
 .container {
     max-width: 1600px;
     margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .container--padding {
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 100px;
 }
 
 .section--dark {
@@ -162,17 +171,29 @@ img {
 * Navigation
  */
 .main-menu {
+    display: none;
     position: sticky;
     top: 0;
     background-color: var(--color-light);
     /* box-shadow: var(--shadowl-sm) */
 }
 
+@media (min-width: 768px) {
+    .main-menu {
+        display: block;
+    }
+}
+
 .main-menu__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    position: relative;
     height: 72px;
+}
+.main-menu__logo {
+    left: 0;
+    position: absolute;
 }
 .main-menu__links {
     display: flex;
@@ -205,8 +226,13 @@ img {
 }
 
 .columns {
-    display: flex;
     gap: 100px;
+}
+
+@media (min-width: 768px) {
+    .columns {
+        display: flex;
+    }
 }
 
 .column {
