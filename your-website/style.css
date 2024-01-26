@@ -1,5 +1,8 @@
 /* 
-* Variables
+ ************************************************ Design system code related start ************************************************
+ */
+/* 
+ * Variables
  */
 :root {
     /* Text colors */
@@ -10,12 +13,22 @@
     --color-dark: #222;
     --color-accent: #007bff;
 
+    /* Font family */
+    --font-body: 'Helvetica', sans-serif;
+    --font-heading: 'Helvetica Neue', 'Open Sans', sans-serif;
+
+
     /* Border radius */
     --border-radius-xs: 4px;
     --border-radius-sm: 8px;
     --border-radius-md: 16px;
     --border-radius-lg: 24px;
     --border-radius-full: 50%;
+
+    /* Shadows */
+    --shadowl-sm: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    --shadowl-md: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    --shadowl-lg: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 /* 
@@ -33,7 +46,6 @@ h1 {
     text-transform: uppercase;
     font-size: 150px;
     text-transform: uppercase;
-    max-width: 1200px;
     line-height: 90%;
     margin: 0 auto;
 }
@@ -86,15 +98,29 @@ img {
 .button {
     display: inline-flex;
     padding: 12px 32px;
-    border: 2px solid var(--color-dark);
     border-radius: 4px;
-    color: var(--color-dark);
     text-decoration: none;
     text-transform: uppercase;
-    background-color: transparent;
     cursor: pointer;
 }
 
+.button--primary {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    border: 2px solid var(--color-dark);
+}
+.button--outline {
+    border: 2px solid var(--color-dark);
+    background-color: transparent;
+    color: var(--color-dark);
+}
+
+.button--text {
+    padding: 0;
+    color: var(--color-dark);
+    background-color: transparent;
+    border: none;
+}
 /* 
 * Utilities
  */
@@ -125,6 +151,40 @@ img {
 .section--dark {
     color: #fff;
     background-color: var(--color-dark);
+}
+
+/* 
+ ************************************************ Design system code related end ************************************************
+ */
+
+
+/* 
+* Navigation
+ */
+.main-menu {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-light);
+    /* box-shadow: var(--shadowl-sm) */
+}
+
+.main-menu__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+}
+.main-menu__links {
+    display: flex;
+    gap: 16px;
+}
+.main-menu__links a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--color-dark);
+}
+.main-menu__links a:hover {
+    color: var(--color-accent);
 }
 
 /* 
