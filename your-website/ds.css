@@ -1,0 +1,9 @@
+.container--ds {
+    border-top: 2px solid #222;
+    border-bottom: 2px solid #eee;
+}
+
+.container-placeholder {
+    height: 100px;
+    background-color: #222;
+}
